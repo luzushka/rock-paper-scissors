@@ -1,7 +1,6 @@
-export const createElement = (nodeType, addInsideThisNode, className = '') => {
+export const createElement = (nodeType, className = '') => {
     const newNode = document.createElement(nodeType);
     newNode.className = className;
-    addInsideThisNode.appendChild(newNode);
     return newNode;
 }
 
