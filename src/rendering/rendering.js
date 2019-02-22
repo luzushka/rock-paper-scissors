@@ -7,3 +7,7 @@ export const createElement = (nodeType, className = '') => {
 export const setTextOfNode = (node, text) => {
     node.textContent = text;
 }
+
+export const appendChildren = (node, ...children) => {
+    children.forEach(child => node.appendChild(child));
+}

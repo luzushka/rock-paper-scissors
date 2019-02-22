@@ -1,0 +1,11 @@
+.score-labels-bar {
+    display: flex;
+    width: 15vw;
+    min-width: 95px;
+    justify-content: space-between;
+    flex-direction: row;
+
+    p {
+        text-transform: uppercase;
+    }
+}

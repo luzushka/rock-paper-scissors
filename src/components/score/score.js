@@ -1,25 +1,29 @@
-import { createElement, setTextOfNode } from '../../rendering/rendering';
+import { createElement, setTextOfNode, appendChildren } from '../../rendering/rendering';
 import './score.scss';
 
-const score = createElement('div', 'score-component');
-const labelsBar = createElement('div', 'score-labels-bar');
-const scoresBar = createElement('div', 'score-scores-bar');
+const createScoreElement = (youScore, theyScore) => {
+    const score = createElement('div', 'score-component');
+    const labelsBar = createElement('div', 'score-labels-bar');
+    const scoresBar = createElement('div', 'score-labels-bar score-scores-bar');
 
-const youLabel = createElement('p', 'score-label-you');
-setTextOfNode(youLabel, 'you');
-const theyLabel = createElement('p', 'score-label-they');
-setTextOfNode(theyLabel, 'they');
+    const youLabel = createElement('p', 'score-label-you');
+    setTextOfNode(youLabel, 'you');
+    const theyLabel = createElement('p', 'score-label-they');
+    setTextOfNode(theyLabel, 'they');
 
-const youScore = createElement('p', 'score-number-you');
-const theyScore = createElement('p', 'score-number-they');
+    const youScoreText = createElement('p', 'score-number-you');
+    const theyScoreText = createElement('p', 'score-number-they');
 
-labelsBar.appendChild(youLabel);
-labelsBar.appendChild(theyLabel);
+    setTextOfNode(youScoreText, youScore);
+    setTextOfNode(theyScoreText, theyScore);
 
-scoresBar.appendChild(youScore);
-scoresBar.appendChild(theyScore);
+    appendChildren(labelsBar, youLabel, theyLabel);
 
-score.appendChild(labelsBar);
-score.appendChild(scoresBar);
+    appendChildren(scoresBar, youScoreText, theyScoreText);
 
-export default score;
+    appendChildren(score, labelsBar, scoresBar);
+
+    return score;
+}
+
+export default createScoreElement;

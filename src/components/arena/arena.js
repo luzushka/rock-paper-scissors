@@ -1,15 +1,17 @@
-import { createElement, setTextOfNode } from '../../rendering/rendering';
+import { createElement, setTextOfNode, appendChildren } from '../../rendering/rendering';
 import './arena.scss';
 
-const arena = createElement('div', 'score-component');
+const createArenaElement = () => {
+    const arena = createElement('div', 'arena-component');
 
-const choiceWrapper = createElement('div', 'choice-wrapper');
-const yourChoice = createElement('div', 'your-choice');
-const theirChoice = createElement('div', 'their-choice');
+    const choiceWrapper = createElement('div', 'choice-wrapper');
+    const yourChoice = createElement('div', 'choice your-choice');
+    const theirChoice = createElement('div', 'choice their-choice');
 
-choiceWrapper.appendChild(yourChoice);
-choiceWrapper.appendChild(theirChoice);
+    appendChildren(choiceWrapper, yourChoice, theirChoice);
+    appendChildren(arena, choiceWrapper);
 
+    return arena;
+}
 
-
-export default arena;
+export default createArenaElement;

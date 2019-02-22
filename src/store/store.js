@@ -1,4 +1,2 @@
-export default {
-    theyScore: 0,
-    youScore: 0,
-}
+export const youScore = 0;
+export const theyScore = 0;
