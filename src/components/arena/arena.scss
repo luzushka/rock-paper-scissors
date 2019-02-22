@@ -1,4 +1,7 @@
 .choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 60px;
     min-height: 60px;
     max-width: 75px;
