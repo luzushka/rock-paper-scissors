@@ -1,0 +1,15 @@
+.keys-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.key-component {
+    display: flex;
+    height: 30px;
+    padding: 0px 5px;
+    background-color: orange;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}

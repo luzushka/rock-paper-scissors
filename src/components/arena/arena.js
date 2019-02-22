@@ -1,4 +1,5 @@
-import { createElement, setTextOfNode, appendChildren } from '../../rendering/rendering';
+import { createElement, appendChildren } from '../../rendering/rendering';
+import keyboard from '../keyboard/keyboard';
 import './arena.scss';
 
 const createArenaElement = () => {
@@ -10,6 +11,7 @@ const createArenaElement = () => {
 
     appendChildren(choiceWrapper, yourChoice, theirChoice);
     appendChildren(arena, choiceWrapper);
+    appendChildren(arena, keyboard());
 
     return arena;
 }

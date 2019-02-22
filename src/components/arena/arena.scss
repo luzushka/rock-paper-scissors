@@ -18,4 +18,8 @@
 
 .arena-component {
     transform: translate(0%, 150%);
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
