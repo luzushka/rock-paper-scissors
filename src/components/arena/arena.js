@@ -1,9 +1,10 @@
 import { createElement, appendChildren, setTextOfNode } from '../../rendering/rendering';
-import { yourChoice as yourChoiceInStore, theirChoice as theirChoiceInStore } from '../../store/store';
+import store from '../../store/dataStore';
 import keyboard from '../keyboard/keyboard';
 import './arena.scss';
 
 const createArenaElement = () => {
+    const { yourChoice: yourChoiceInStore, theirChoice: theirChoiceInStore } = store;
     const arena = createElement('div', 'arena-component');
 
     const choiceWrapper = createElement('div', 'choice-wrapper');
