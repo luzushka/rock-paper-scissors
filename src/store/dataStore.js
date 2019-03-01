@@ -1,7 +1,7 @@
 import { setValueEventHandler } from '../helpers/helpers';
 import storeCreator from './storeCreator';
 
-const initialStore = () => ({
+export const initialStore = () => ({
   youScore: 0,
   theyScore: 0,
   yourChoice: '',

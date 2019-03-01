@@ -1,7 +1,8 @@
 import { createElement, appendChildren, setTextOfNode } from '../../rendering/rendering';
-import store from '../../store/dataStore';
+import store, { initialStore } from '../../store/dataStore';
 import { gameOptions, stronger } from '../../helpers/consts';
 import { opponentGetChoice } from '../../helpers/helpers';
+import baseModal from '../modals/baseModal/baseModal';
 import './keyboard.scss';
 
 const keyMaker = (keyText) => {
@@ -12,6 +13,12 @@ const keyMaker = (keyText) => {
 
 const scoreHandler = () => {
   const score = stronger[store.yourChoice][store.theirChoice];
+  const removeModalCallback = () => {
+    document.querySelector('.modal').remove();
+    const initStore = initialStore();
+    Object.keys(store).forEach((key)=> store[key] = initStore[key]);
+  };
+  
   if (score === 1) {
     store.youScore += 1;
   } else if (score === -1) {
@@ -19,9 +26,11 @@ const scoreHandler = () => {
   }
 
   if (store.youScore === 3) {
-    console.log('You won!'); // will change to a modal soon
+    const modal = baseModal('you win', ['you-win-modal'], removeModalCallback);
+    appendChildren(document.body, modal);
   } else if (store.theyScore === 3) {
-    console.log('You lose :(');
+    const modal = baseModal('game over', ['game-over-modal'], removeModalCallback);
+    appendChildren(document.body, modal);
   }
 };
 
