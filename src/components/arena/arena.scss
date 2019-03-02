@@ -8,6 +8,7 @@
     max-height: 75px;
     border-radius: 5px;
     background-color: #0B646F;
+    color: seashell;
 }
 
 .choice-wrapper {
@@ -20,9 +21,13 @@
 }
 
 .arena-component {
-    transform: translate(0%, 150%);
-    height: 125px;
+    transform: translate(0%, 55%);
+    height: 197px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    * {
+        font-family: 'Walkway';
+        font-weight: 900;
+    }
 }

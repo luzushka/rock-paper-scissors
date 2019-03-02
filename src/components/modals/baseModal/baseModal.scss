@@ -10,13 +10,22 @@
     height: 40vh;
     width: 77vw;
     transform: translate(15%, 50%);
+    border-radius: 20px;
   }
 
   &__title {
     text-align: center;
+    font-family: 'Simply Rounded';
+    font-size: 100px;
   }
 
   &__button {
+    border: 1px transparent;
+    border-radius: 12px;
+    background: linear-gradient(to right, #ad5389, #3c1053);
+    font-size: 30px;
+    padding: 5px 10px;
+    color: floralwhite;
 
     &-wrapper {
       display: flex;
@@ -29,7 +38,7 @@
 .game-over-modal {
   .modal {
     &__contents {
-      background-color: red;
+      background-color: mediumseagreen;
     }
   }
 }

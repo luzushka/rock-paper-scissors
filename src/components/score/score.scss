@@ -1,11 +1,25 @@
 .score-labels-bar {
     display: flex;
-    width: 15vw;
+    width: 40vw;
     min-width: 95px;
     justify-content: space-between;
     flex-direction: row;
 
     p {
         text-transform: uppercase;
+    }
+}
+
+.score-scores-bar {
+    width: 35vw;
+    width: 33vw;
+    padding-left: 3.5vw;
+}
+
+.score-component {
+    * {
+        font-family: 'Simply Rounded';
+        font-weight: 100;
+        font-size: 30px;
     }
 }
