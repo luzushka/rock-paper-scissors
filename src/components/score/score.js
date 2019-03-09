@@ -3,8 +3,6 @@ import './score.scss';
 
 const createScoreElement = (youScore, theyScore) => {
   const score = createElement('div', 'score-component');
-  const labelsBar = createElement('div', 'score-labels-bar');
-  const scoresBar = createElement('div', 'score-labels-bar score-scores-bar');
 
   const youLabel = createElement('p', 'score-label-you');
   setTextOfNode(youLabel, 'you');
@@ -17,11 +15,9 @@ const createScoreElement = (youScore, theyScore) => {
   setTextOfNode(youScoreText, youScore);
   setTextOfNode(theyScoreText, theyScore);
 
-  appendChildren(labelsBar, youLabel, theyLabel);
+  appendChildren(score, youLabel, theyLabel);
 
-  appendChildren(scoresBar, youScoreText, theyScoreText);
-
-  appendChildren(score, labelsBar, scoresBar);
+  appendChildren(score, youScoreText, theyScoreText);
 
   return score;
 };
